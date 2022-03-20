@@ -93,6 +93,9 @@ class RegistrationViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        //add buttons functionality
+        signUpButton.addTarget(self, action: #selector(didTappedRegisterButton), for: .touchUpInside)
+        
         //assign frames
         
         usernameTextField.frame = CGRect(
@@ -136,22 +139,22 @@ class RegistrationViewController: UIViewController {
         userEmailTextField.resignFirstResponder()
         userPasswordTextField.resignFirstResponder()
         
-        guard let usernName = usernameTextField.text, !usernName.isEmpty,
+        guard let userName = usernameTextField.text, !userName.isEmpty,
               let userEmail = userEmailTextField.text, !userEmail.isEmpty,
               let userPassword = userPasswordTextField.text, !userPassword.isEmpty else {
             return
         }
         
-        AuthenticationManager.shared.registerUser(username: usernName, email: userEmail, password: userPassword) { registered in
-            if registered {
-                //redirect to the some view
-                
-            }else{
-                //show alert
-                
-                return
+        AuthenticationManager.shared.registerUser(username: userName, email: userEmail, password: userPassword) { registered in
+            DispatchQueue.main.async {
+                if registered {
+                    //redirect
+                    print("success")
+                }else{
+                    //register failed show alert
+                    print("failed")
+                }
             }
-            
         }
     }
 }

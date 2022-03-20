@@ -18,7 +18,7 @@ class DatabaseManager {
     ///     - email: String representing email
     ///     - completion: async callback for result if func. is succeeded.
     public func canCreateUser(username: String, email: String, completion: @escaping (Bool) -> Void){
-        
+        completion(true)
     }
     
     /// Insert new user information
@@ -27,7 +27,7 @@ class DatabaseManager {
     ///     - email: String representing user's email address.
     ///     - completion: async callback for result if func. is succeeded.
     public func insertNewUser(username: String, email: String, completion: @escaping (Bool) -> Void) {
-        database.child(email).setValue(["username": username]){ error, _ in
+        database.child(email.generateDatabaseKey()).setValue(["username": username]){ error, _ in
             if error == nil {
                 completion(true)
                 return
