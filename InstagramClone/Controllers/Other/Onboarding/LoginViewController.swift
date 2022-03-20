@@ -219,6 +219,9 @@ class LoginViewController: UIViewController {
         AuthenticationManager.shared.loginUser(username: username, email: email, password: userPassword) { success in
             DispatchQueue.main.async {
                 if success {
+                    print("you logged-in")
+                    
+                    //Close your self which is LoginView
                     self.dismiss(animated: true, completion: nil)
                 }else{
                     let alert = UIAlertController(

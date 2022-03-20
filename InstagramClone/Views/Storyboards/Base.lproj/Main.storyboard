@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nvI-Uf-YaF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nvI-Uf-YaF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +35,7 @@
         <scene sceneID="GVs-Lu-7mf">
             <objects>
                 <navigationController id="rOo-0w-Lcz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="binoculars" catalog="system" id="pT5-qS-7fl"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="pT5-qS-7fl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6JZ-0W-eYa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +52,7 @@
         <scene sceneID="UAa-K6-qWl">
             <objects>
                 <navigationController id="NVA-Hz-osl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="Oz5-xK-zsI"/>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="Oz5-xK-zsI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OLn-SS-2D2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,7 +102,7 @@
         <scene sceneID="nXa-5A-cJw">
             <objects>
                 <navigationController id="Pyi-6u-STE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="CwS-xg-2sU"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="CwS-xg-2sU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dtr-tG-bSB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -198,9 +198,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
-        <image name="binoculars" catalog="system" width="128" height="90"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">

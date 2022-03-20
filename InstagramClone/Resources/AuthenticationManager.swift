@@ -54,6 +54,8 @@ class AuthenticationManager {
                     completion(false)
                     return
                 }
+                
+                completion(true)
             }
         } else if let username = username {
             print(username)
