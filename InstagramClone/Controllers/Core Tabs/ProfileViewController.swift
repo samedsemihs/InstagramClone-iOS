@@ -11,19 +11,22 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        configureNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureNavigationBar(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "gear"),
+                                                                 style: .done,
+                                                                 target: self,
+                                                                 action: #selector(didTapSettingsGearButton))
     }
-    */
-
+    
+    @objc func didTapSettingsGearButton(){
+        let settingsViewController = SettingsViewController()
+        settingsViewController.title = "Settings"
+        navigationController?.pushViewController(settingsViewController, animated: true)
+        //settingsViewController.modalPresentationStyle = .fullScreen
+        //present(settingsViewController, animated: true)
+    }
 }

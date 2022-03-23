@@ -92,9 +92,9 @@
 		A77F63AC27DA9A9C009DE6A5 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				A7B3582627DA7A6900165B4B /* SettingsViewController.swift */,
 				A7B3582127DA7A3700165B4B /* PostViewController.swift */,
 				A7B3582427DA7A5F00165B4B /* EditProfileViewController.swift */,
-				A7B3582627DA7A6900165B4B /* SettingsViewController.swift */,
 				A7B3582827DA7A7D00165B4B /* ListViewController.swift */,
 				A7B3582A27DA7A8E00165B4B /* SearchViewController.swift */,
 				A7B3582C27DA7A9A00165B4B /* SearchResultViewController.swift */,

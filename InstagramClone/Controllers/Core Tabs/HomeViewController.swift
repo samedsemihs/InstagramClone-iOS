@@ -13,13 +13,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+       /*
         //Sign-out the user
         do{
             try Auth.auth().signOut()
         }catch{
             print("error")
         }
+        */
         
         userSessionControlHandler()
     }

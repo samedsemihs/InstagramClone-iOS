@@ -61,4 +61,16 @@ class AuthenticationManager {
             print(username)
         }
     }
+    
+    public func logOutUser(completion: (Bool) -> Void){
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        } catch {
+            print(error.localizedDescription)
+            completion(false)
+            return
+        }
+    }
 }
