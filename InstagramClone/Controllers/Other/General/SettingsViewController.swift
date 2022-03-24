@@ -50,20 +50,32 @@ class SettingsViewController: UIViewController {
     }
     
     private func didTapLogOutButton(){
-        AuthenticationManager.shared.logOutUser { success in
+        //Give options for user to select those
+        let actionSheet = UIAlertController(title: "Log Out", message: "Do you want to Log Out ?", preferredStyle: .actionSheet)
+        
+        //When says OK
+        actionSheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
             DispatchQueue.main.async {
-                if success {
-                    let loginViewController = LoginViewController()
-                    loginViewController.modalPresentationStyle = .fullScreen
-                    self.present(loginViewController, animated: true){
-                        self.navigationController?.popToRootViewController(animated: true)
-                        self.tabBarController?.selectedIndex = 0
+                AuthenticationManager.shared.logOutUser { success in
+                    if success {
+                        let loginView = LoginViewController()
+                        loginView.modalPresentationStyle = .fullScreen
+                        self.present(loginView, animated: true){
+                            self.navigationController?.popToRootViewController(animated: true)
+                            self.tabBarController?.selectedIndex = 0
+                        }
+                    }else{
+                        print("Error")
                     }
-                }else{
-                    //return some error
                 }
             }
-        }
+        }))
+        
+        //Cancel
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        //Show alert
+        present(actionSheet, animated: true)
     }
 }
 
