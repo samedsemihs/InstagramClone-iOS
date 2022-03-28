@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 struct SettingsCellParameters {
     let title: String
@@ -40,16 +41,78 @@ class SettingsViewController: UIViewController {
     
     private func configureSections() {
         //Define sections of settings view
-        let section = [
+        
+        //Personal settings
+        data.append([
+            SettingsCellParameters(title: "Edit Profile"){ [weak self] in
+                self?.didTapEditProfile()
+            },
+            SettingsCellParameters(title: "Invite Friends"){ [weak self] in
+                self?.didTapInviteFriends()
+            },
+            SettingsCellParameters(title: "Save Original Posts"){ [weak self] in
+                self?.didTapSavePosts()
+            }
+        ])
+        
+        //Terms
+        data.append([
+            SettingsCellParameters(title: "Terms of Service"){ [weak self] in
+                self?.didTapTermsOfService(termType: .service)
+            },
+            SettingsCellParameters(title: "Privacy Policy"){ [weak self] in
+                self?.didTapTermsOfService(termType: .privacy)
+            },
+            SettingsCellParameters(title: "Help / Feedback"){ [weak self] in
+                self?.didTapTermsOfService(termType: .help)
+            }
+        
+        ])
+        
+        //log out
+        data.append([
             SettingsCellParameters(title: "Log-out"){ [weak self] in
                 self?.didTapLogOutButton()
             }
-        ]
-        
-        data.append(section)
+        ])
     }
     
-    private func didTapLogOutButton(){
+    enum TermsTypes {
+    case service, privacy, help
+    }
+    
+    private func didTapEditProfile() {
+        
+    }
+    
+    private func didTapInviteFriends() {
+        
+    }
+    
+    private func didTapSavePosts() {
+        
+    }
+    
+    private func didTapTermsOfService(termType: TermsTypes) {
+        let urlString: String
+        
+        switch termType {
+        case .service:
+            urlString = "https://help.instagram.com/581066165581870"
+        case .privacy:
+            urlString = "https://help.instagram.com/519522125107875/?maybe_redirect_pol=0"
+        case .help:
+            urlString = "https://help.instagram.com/"
+        }
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        present(SFSafariViewController(url: url), animated: true)
+        
+        
+    }
+    
+    private func didTapLogOutButton() {
         //Give options for user to select those
         let actionSheet = UIAlertController(title: "Log Out", message: "Do you want to Log Out ?", preferredStyle: .actionSheet)
         

@@ -10,23 +10,25 @@ import Firebase
 
 class HomeViewController: UIViewController {
 
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       /*
-        //Sign-out the user
-        do{
-            try Auth.auth().signOut()
-        }catch{
-            print("error")
-        }
-        */
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        view.addSubview(tableView)
         
         userSessionControlHandler()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     private func userSessionControlHandler() {
@@ -38,6 +40,19 @@ class HomeViewController: UIViewController {
             present(loginVC, animated: true)
         }
     }
-
 }
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
+        return cell
+    }
+}

@@ -32,6 +32,11 @@
 		A7B3582D27DA7A9A00165B4B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3582C27DA7A9A00165B4B /* SearchResultViewController.swift */; };
 		A7B3582F27DA7ABF00165B4B /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3582E27DA7ABF00165B4B /* PostEditorViewController.swift */; };
 		A7B3583127DA7ACE00165B4B /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3583027DA7ACE00165B4B /* PublishPostViewController.swift */; };
+		A7B837FB27F2434800C020A1 /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B837FA27F2434800C020A1 /* UserPost.swift */; };
+		A7DF668C27EF5B8800055C84 /* PostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF668B27EF5B8800055C84 /* PostHeaderTableViewCell.swift */; };
+		A7DF668E27EF5B9F00055C84 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF668D27EF5B9F00055C84 /* PostTableViewCell.swift */; };
+		A7DF669027EF5BAF00055C84 /* PostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF668F27EF5BAF00055C84 /* PostActionsTableViewCell.swift */; };
+		A7DF669227EF5BC200055C84 /* PostLikesCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF669127EF5BC200055C84 /* PostLikesCommentsTableViewCell.swift */; };
 		E8FF35A7CF6993C803C2FCC2 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFBC0C3B0A1B97C3B0AFEB3 /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +70,11 @@
 		A7B3582C27DA7A9A00165B4B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		A7B3582E27DA7ABF00165B4B /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		A7B3583027DA7ACE00165B4B /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
+		A7B837FA27F2434800C020A1 /* UserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
+		A7DF668B27EF5B8800055C84 /* PostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		A7DF668D27EF5B9F00055C84 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		A7DF668F27EF5BAF00055C84 /* PostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		A7DF669127EF5BC200055C84 /* PostLikesCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		B1B80DC96E7F95C99381C1AC /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +157,7 @@
 		A7B3580E27DA76F700165B4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7DF668727EF585E00055C84 /* Cells */,
 				A7B3581127DA774200165B4B /* Storyboards */,
 				A7B3580227DA765C00165B4B /* Assets.xcassets */,
 			);
@@ -156,6 +167,7 @@
 		A7B3580F27DA76FF00165B4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7B837FA27F2434800C020A1 /* UserPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +222,25 @@
 				A7B3581F27DA7A1A00165B4B /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A7DF668727EF585E00055C84 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A7DF668A27EF5B6200055C84 /* Home Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A7DF668A27EF5B6200055C84 /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A7DF668B27EF5B8800055C84 /* PostHeaderTableViewCell.swift */,
+				A7DF668D27EF5B9F00055C84 /* PostTableViewCell.swift */,
+				A7DF668F27EF5BAF00055C84 /* PostActionsTableViewCell.swift */,
+				A7DF669127EF5BC200055C84 /* PostLikesCommentsTableViewCell.swift */,
+			);
+			path = "Home Feed";
 			sourceTree = "<group>";
 		};
 		C21EE310C126C0CA7CA8184F /* Frameworks */ = {
@@ -344,19 +375,24 @@
 				A7B3581527DA782300165B4B /* CameraViewController.swift in Sources */,
 				A7B357FE27DA765B00165B4B /* HomeViewController.swift in Sources */,
 				A7B3582027DA7A1A00165B4B /* RegistrationViewController.swift in Sources */,
+				A7DF668E27EF5B9F00055C84 /* PostTableViewCell.swift in Sources */,
 				A7B3582F27DA7ABF00165B4B /* PostEditorViewController.swift in Sources */,
 				A7B3582227DA7A3700165B4B /* PostViewController.swift in Sources */,
 				A7B3581727DA783500165B4B /* NotificationsViewController.swift in Sources */,
 				A7B3582D27DA7A9A00165B4B /* SearchResultViewController.swift in Sources */,
 				A78F90BB27DBCAAB0032B669 /* DatabaseManager.swift in Sources */,
+				A7DF669027EF5BAF00055C84 /* PostActionsTableViewCell.swift in Sources */,
 				A738695127DBD39700530539 /* Extensions.swift in Sources */,
+				A7B837FB27F2434800C020A1 /* UserPost.swift in Sources */,
 				A7B3581E27DA7A0700165B4B /* LoginViewController.swift in Sources */,
 				A7B3582B27DA7A8E00165B4B /* SearchViewController.swift in Sources */,
 				A7B3581927DA784100165B4B /* ProfileViewController.swift in Sources */,
 				A7B357FA27DA765B00165B4B /* AppDelegate.swift in Sources */,
+				A7DF668C27EF5B8800055C84 /* PostHeaderTableViewCell.swift in Sources */,
 				A7B357FC27DA765B00165B4B /* SceneDelegate.swift in Sources */,
 				A7B3582927DA7A7D00165B4B /* ListViewController.swift in Sources */,
 				A7B3582727DA7A6900165B4B /* SettingsViewController.swift in Sources */,
+				A7DF669227EF5BC200055C84 /* PostLikesCommentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
